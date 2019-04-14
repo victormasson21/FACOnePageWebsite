@@ -1,0 +1,80 @@
+
+
+html {
+    background: white;
+    display: block;
+    padding: 0;
+}
+
+header {
+    display: block;
+    position: fixed;
+    height: 110px;
+    width: 100%;
+    padding: 0;
+    top: 0;
+    left: 0;
+
+    background: #39ff82;
+    opacity: 0.8;
+}
+
+.headerlogo {
+    display: block;
+    margin: auto;
+    padding: 25px;
+    /* to visualise element
+    border: 1px white dashed; */
+}
+
+body {
+    display: block;
+    padding: 20px 60px 40px 80px; /* restrains the content within the body */
+    margin: 110px auto 60px auto; /* matches header & footer margins */
+    max-width: 700px;
+    min-width: 500px;
+
+    background-color: #245bb5;
+    opacity: 0.8;
+    /* to visualise element
+    border: 1px blue dashed; */
+}
+
+footer {
+    display: block;
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    color: white;
+
+    background: #ff6038;
+    opacity: 0.8;
+    /* to visualise element
+    border: 1px darkseagreen dashed; */
+
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    color: white;
+    font-family: "EB_Garamond";
+}
+
+h1 {
+}
+
+p {
+    line-height: 1.6em;
+    letter-spacing: 0.025em;
+    font-size: 1em;
+    letter-spacing: ;
+    display: inline;
+    padding: 10px 10px 10px 40px;
+
+}
+
+@font-face {
+    font-family: "EB_Garamond";
+    src: url(https://fonts.googleapis.com/css?family=EB+Garamond);
+}
