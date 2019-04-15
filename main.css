@@ -27,6 +27,31 @@ header {
     border: 1px white dashed; */
 }
 
+nav {
+  text-align: center; /* allows links' centering on page */
+  background-color: #c337ff;
+  opacity: 0.8;
+}
+
+nav ul {
+  margin: inherit;
+}
+
+nav li {
+  display: inline; /* allows links' centering on page */
+}
+
+nav a {
+  display: inline-block; /* allows links' centering on page */
+  padding: 5px 20px;
+  color: white;
+  text-decoration: none;
+  font-family: "EB_Garamond";
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+
 body {
     display: block;
     padding: 20px 60px 40px 80px; /* restrains the content within the body */
@@ -36,8 +61,6 @@ body {
 
     background-color: #245bb5;
     opacity: 0.8;
-    /* to visualise element
-    border: 1px blue dashed; */
 }
 
 footer {
