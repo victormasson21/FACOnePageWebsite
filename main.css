@@ -34,23 +34,50 @@ nav {
 }
 
 nav ul {
-  margin: inherit;
 }
 
 nav li {
   display: inline; /* allows links' centering on page */
+  border: 1px white dashed; /* to visualise element */
 }
 
 nav a {
   display: inline-block; /* allows links' centering on page */
   padding: 5px 20px;
-  color: white;
-  text-decoration: none;
+  color: blue;
+  text-decoration: none; /* removes the links' underline */
   font-family: "EB_Garamond";
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
+
+/* DROPDOWN MENU ATTEMPT BELOW */
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding: 0px;
+}
+
+.dropdownlinks {
+  display: none;  /* change in JS to toggle dropdown */
+  position: absolute;
+  text-align: left;
+  background-color: red;
+  font-size: 0.7em;
+
+}
+
+.dropdownlinks a {
+  padding: 10px;
+  min-width: 140px;
+  border-bottom: 1px green solid;
+}
+
+
+/* ALL BODY and BODY CONTENT STYLING BELOW */
 
 body {
     display: block;
@@ -91,7 +118,6 @@ p {
     line-height: 1.6em;
     letter-spacing: 0.025em;
     font-size: 1em;
-    letter-spacing: ;
     display: inline;
     padding: 10px 10px 10px 40px;
 
