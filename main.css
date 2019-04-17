@@ -11,7 +11,6 @@ header {
     position: fixed;
     height: 110px;
     width: 100%;
-    padding: 0;
     top: 0;
     left: 0;
 
@@ -26,6 +25,8 @@ header {
     /* to visualise element
     border: 1px white dashed; */
 }
+
+/* TOP NAV STYLING BELOW */
 
 nav {
   text-align: center; /* allows links' centering on page */
@@ -46,13 +47,13 @@ nav a {
   padding: 5px 20px;
   color: blue;
   text-decoration: none; /* removes the links' underline */
-  font-family: "EB_Garamond";
+  font-family: "Nanum+Myeongjo";
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
 
-/* DROPDOWN MENU ATTEMPT BELOW */
+/* DROPDOWN MENU */
 
 
 .dropdown {
@@ -83,12 +84,73 @@ body {
     display: block;
     padding: 20px 60px 40px 80px; /* restrains the content within the body */
     margin: 110px auto 60px auto; /* matches header & footer margins */
-    max-width: 700px;
+    max-width: 640px;
     min-width: 500px;
 
     background-color: #245bb5;
     opacity: 0.8;
 }
+
+/* HOME PAGE CONTENT */
+
+.homeblock {
+  margin-top: 40px; /* add breathing space between each block */
+  display: flex; /* WIP - for right align / works but not the title */
+
+  border: 1px white dotted;
+}
+
+
+.hometitle {
+  /* all styling within h1 tag */
+}
+
+.homeparagraph {
+  max-width: 450px;
+  text-align: justify;
+  text-indent: 30px;
+
+  margin-top: 100px; /* just messin with the fllex WIP */
+  align-items: flex-end; /* WIP - for right align / works but not the title */
+
+  border: 1px grey dotted;
+}
+
+/* TEXT STYLING */
+
+p, h1, h2, h3, h4, h5, h6 {
+    color: white;
+    font-family: "NanumMyeongjo Regular", serif;
+}
+
+h1 {
+    font-family: "NanumMyeongjo ExtraBold", serif;
+    font-size: 1.8em;
+}
+
+p {
+    line-height: 190%;
+    letter-spacing: 0.025em;
+    font-size: 0.95em;
+  
+}
+
+@font-face {
+    font-family: "NanumMyeongjo Regular";
+    src: url(fonts/NanumMyeongjo-Regular.ttf);
+}
+
+@font-face {
+    font-family: "NanumMyeongjo ExtraBold";
+    src: url(fonts/NanumMyeongjo-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: "NanumMyeongjo Bold";
+    src: url(fonts/NanumMyeongjo-Bold.ttf);
+}
+
+/* FOOTER */
 
 footer {
     display: block;
@@ -106,24 +168,4 @@ footer {
 
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-    color: white;
-    font-family: "EB_Garamond";
-}
 
-h1 {
-}
-
-p {
-    line-height: 1.6em;
-    letter-spacing: 0.025em;
-    font-size: 1em;
-    display: inline;
-    padding: 10px 10px 10px 40px;
-
-}
-
-@font-face {
-    font-family: "EB_Garamond";
-    src: url(https://fonts.googleapis.com/css?family=EB+Garamond);
-}
