@@ -1,5 +1,5 @@
 html {
-    background: white;
+    background: #1a1d22;
     display: block;
     padding: 0;
 }
@@ -11,25 +11,25 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-
-    background: #39ff82;
-    opacity: 0.8;
+    background: #1a1d22;
+    padding-bottom: 20px;
+    user-select: none;
 }
 
 .headerlogo {
     display: block;
     margin: auto;
     padding: 25px;
-    /* to visualise element
-    border: 1px white dashed; */
 }
 
 /* TOP NAV STYLING BELOW */
 
 nav {
-  text-align: center; /* allows links' centering on page */
-  background-color: #c337ff;
-  opacity: 0.8;
+  text-align: center;
+  padding-bottom: 5px;
+  background: linear-gradient(to top,
+        rgba(26,29,34, 0),
+        rgba(26,29,34, 1) 10%);
 }
 
 nav ul {
@@ -37,17 +37,21 @@ nav ul {
 
 nav li {
   display: inline; /* allows links' centering on page */
-  border: 1px white dashed; /* to visualise element */
 }
 
 nav a {
   display: inline-block; /* allows links' centering on page */
-  padding: 5px 20px;
-  color: blue;
+  padding: 12px 20px 12px 20px;
+  color: #f4dbbf;
   text-decoration: none; /* removes the links' underline */
-  font-family: "Nanum+Myeongjo";
+  font-family: "NanumMyeongjo ExtraBold";
   letter-spacing: 0.15em;
-  text-transform: uppercase;
+  transition: background-color 0.4s;
+  cursor: pointer;
+}
+
+nav a:hover {
+  background-color: #313a48;
 }
 
 
@@ -64,14 +68,18 @@ nav a {
   display: none;  /* change in JS to toggle dropdown */
   position: absolute;
   text-align: left;
-  background-color: red;
+  background-color: #313a48;
   font-size: 0.7em;
+}
+
+.dropdownlinks a:hover {
+  background: #1a1d22;
 }
 
 .dropdownlinks a {
   padding: 10px;
   min-width: 140px;
-  border-bottom: 1px green solid;
+  border-bottom: 1px #1a1d22 solid;
 }
 
 
@@ -83,65 +91,69 @@ body {
     margin: 110px auto 60px auto; /* matches header & footer margins */
     max-width: 640px;
     min-width: 500px;
-    background-color: #245bb5;
-    opacity: 0.8;
+    background-color: #1a1d22;
+    opacity: 1; /* can be removed? */
 }
 
 /* HOME PAGE CONTENT */
 
 .homeblock {
-  margin-top: 40px; /* add breathing space between each block */
-  display: flex; /* WIP - for right align / works but not the title */
-  border: 1px white dotted;
 }
 
 
 .hometitle {
-  /* all styling within h1 tag */
+  display: block;
+  float: left;
+  margin-top: 30px;
+  max-width: 640px;
+  min-width: 500px;
+  height: auto;
+  text-align: left; /* to reinforce */
 }
 
 .homeparagraph {
   max-width: 450px;
+  display: block;
+  float: right;
+  right: 0;
   text-align: justify;
   text-indent: 30px;
-  margin-top: 100px; /* just messin with the fllex WIP */
-  align-items: flex-end; /* WIP - for right align / works but not the title */
-  border: 1px grey dotted;
 }
 
 /* TEXT STYLING */
 
 p, h1, h2, h3, h4, h5, h6 {
-    color: white;
     font-family: "NanumMyeongjo Regular", serif;
 }
 
 h1 {
     font-family: "NanumMyeongjo ExtraBold", serif;
-    font-size: 1.8em;
+    color: #f7824c; /* #ff9463 #f7824c #ed8d61 */
+    font-size: 2em;
 }
 
 p {
     line-height: 190%;
     letter-spacing: 0.025em;
     font-size: 0.95em;
-  
+    color: #fff8f2;
 }
 
 @font-face {
-    font-family: "NanumMyeongjo Regular";
-    src: url(fonts/NanumMyeongjo-Regular.ttf);
+  font-family: "NanumMyeongjo Regular";
+  src: url(fonts/NanumMyeongjo-Regular.ttf);
 }
 
 @font-face {
-    font-family: "NanumMyeongjo ExtraBold";
-    src: url(fonts/NanumMyeongjo-ExtraBold.ttf);
+  font-family: "NanumMyeongjo ExtraBold";
+  src: url(fonts/NanumMyeongjo-ExtraBold.ttf);
 }
 
 @font-face {
-    font-family: "NanumMyeongjo Bold";
-    src: url(fonts/NanumMyeongjo-Bold.ttf);
+  font-family: "NanumMyeongjo Bold";
+  src: url(fonts/NanumMyeongjo-Bold.ttf);
 }
+
 
 /* FOOTER */
 
@@ -155,9 +167,9 @@ footer {
     left: 0;
     text-align: center; /* center icons */
     background: linear-gradient(to bottom,
-                rgba(0,0,0, 0),
-                rgba(0,0,0, 1) 50%);
-
+                rgba(26,29,34, 0),
+                rgba(26,29,34, 1) 50%);
+    user-select: none;
 }
 
 .footicons {
@@ -168,7 +180,13 @@ footer {
 footer img {
   height: 25px;
   padding: 15px;
-  bottom: 8px;
-  opacity: 0.85;
+  padding-top: 20px;
+  color: #d39477; /* no effect.... */
+  opacity: 0.6;
+  transition: opacity 0.8s;
+}
+
+footer img:hover {
+  opacity: 1;
 }
 
