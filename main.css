@@ -91,13 +91,12 @@ body {
     margin: 110px auto 60px auto; /* matches header & footer margins */
     max-width: 640px;
     min-width: 500px;
-    background-color: #1a1d22;
-    opacity: 1; /* can be removed? */
 }
 
 /* HOME PAGE CONTENT */
 
 .homeblock {
+  margin-bottom: 100px;
 }
 
 
@@ -138,6 +137,18 @@ p {
     font-size: 0.95em;
     color: #fff8f2;
 }
+
+p a {
+  color: #fcd9bd; /*  #fff8f2 #ffebdb  #fcd9bd */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+p a:hover {
+  color: #fff8f2; /*  #fff8f2 #ffebdb  #fcd9bd */
+  text-decoration: none;
+}
+
 
 @font-face {
   font-family: "NanumMyeongjo Regular";
