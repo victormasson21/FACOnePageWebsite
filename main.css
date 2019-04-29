@@ -1,53 +1,55 @@
 html {
-    background: #1a1d22;
-    display: block;
-    padding: 0;
+  background: #1a1d22;
+  display: block;
+  padding: 0;
 }
+
+/* HEADER */
 
 header {
-    display: block;
-    position: fixed;
-    height: 110px;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: #1a1d22;
-    padding-bottom: 20px;
-    user-select: none;
+  display: block;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding-bottom: 5px;
+  background: linear-gradient(to top,
+      rgba(26,29,34, 0),
+      rgba(26,29,34, 1) 10%);
+  user-select: none;
+  x-index: 1;
 }
 
-.headerlogo {
-    display: block;
-    margin: auto;
-    padding: 25px;
+.header-logo {
+  display: block;
+  margin: auto;
+  padding: 10px;
 }
 
-/* TOP NAV STYLING BELOW */
+/* HEADER - Top Nav */
 
 nav {
   text-align: center;
-  padding-bottom: 5px;
-  background: linear-gradient(to top,
-        rgba(26,29,34, 0),
-        rgba(26,29,34, 1) 10%);
-}
-
-nav ul {
+  margin-left: -30px;
+  background: #1a1d22;
+  min-width: 320px;
 }
 
 nav li {
-  display: inline; /* allows links' centering on page */
+  display: inline;
+  margin: auto;
 }
 
 nav a {
-  display: inline-block; /* allows links' centering on page */
+  display: inline-block;
   padding: 12px 20px 12px 20px;
   color: #f4dbbf;
-  text-decoration: none; /* removes the links' underline */
+  text-decoration: none;
   font-family: "NanumMyeongjo ExtraBold";
   letter-spacing: 0.15em;
-  transition: background-color 0.4s;
   cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.4s;
 }
 
 nav a:hover {
@@ -55,8 +57,7 @@ nav a:hover {
 }
 
 
-/* DROPDOWN MENU */
-
+/* HEADER - Dropdown menu */
 
 .dropdown {
   position: relative;
@@ -64,88 +65,86 @@ nav a:hover {
   padding: 0px;
 }
 
-.dropdownlinks {
-  display: none;  /* change in JS to toggle dropdown */
+.dropdown-content {
+  display: none;
   position: absolute;
   text-align: left;
   background-color: #313a48;
   font-size: 0.7em;
 }
 
-.dropdownlinks a:hover {
+.dropdown-content a:hover {
   background: #1a1d22;
 }
 
-.dropdownlinks a {
+.dropdown-content a {
   padding: 10px;
   min-width: 140px;
   border-bottom: 1px #1a1d22 solid;
 }
 
 
-/* ALL BODY and BODY CONTENT STYLING BELOW */
+/* BODY */
 
 body {
-    display: block;
-    padding: 20px 60px 40px 80px; /* restrains the content within the body */
-    margin: 110px auto 60px auto; /* matches header & footer margins */
-    max-width: 640px;
-    min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: 170px auto 80px auto;
+  max-width: 640px;
+  min-width: 320px;
 }
 
-/* HOME PAGE CONTENT */
+/* BODY - Text blocks */
 
-.homeblock {
-  margin-bottom: 100px;
+.home-block {
+  padding: 0px 20px;
 }
 
 
-.hometitle {
+.home-title {
   display: block;
   float: left;
-  margin-top: 30px;
+  margin-top: 20px;
   max-width: 640px;
-  min-width: 500px;
   height: auto;
-  text-align: left; /* to reinforce */
 }
 
-.homeparagraph {
+.home-paragraph, .photo-credits-text {
   max-width: 450px;
+  min-width: 100px;
   display: block;
   float: right;
-  right: 0;
-  text-align: justify;
-  text-indent: 30px;
 }
 
-/* TEXT STYLING */
+/* BODY - Text styling */
 
 p, h1, h2, h3, h4, h5, h6 {
-    font-family: "NanumMyeongjo Regular", serif;
+  font-family: "NanumMyeongjo Regular", serif;
 }
 
 h1 {
-    font-family: "NanumMyeongjo ExtraBold", serif;
-    color: #f7824c; /* #ff9463 #f7824c #ed8d61 */
-    font-size: 2em;
+  font-family: "NanumMyeongjo ExtraBold", serif;
+  color: #f7824c; /* other options: #ff9463 #f7824c #ed8d61 */
+  font-size: 2em;
 }
 
 p {
-    line-height: 190%;
-    letter-spacing: 0.025em;
-    font-size: 0.95em;
-    color: #fff8f2;
+  text-align: justify;
+  text-indent: 30px;
+  line-height: 190%;
+  letter-spacing: 0.025em;
+  font-size: 0.95em;
+  color: #fff8f2; /* other options: #fff8f2 #ffebdb  #fcd9bd */
 }
 
 p a {
-  color: #fcd9bd; /*  #fff8f2 #ffebdb  #fcd9bd */
+  color: #fcd9bd; /* other options: #fff8f2 #ffebdb  #fcd9bd */
   text-decoration: none;
   transition: color 0.3s;
 }
 
 p a:hover {
-  color: #fff8f2; /*  #fff8f2 #ffebdb  #fcd9bd */
+  color: #fff8f2; /* other options:  #fff8f2 #ffebdb  #fcd9bd */
   text-decoration: none;
 }
 
@@ -166,24 +165,154 @@ p a:hover {
 }
 
 
+
+/* SLIDER - Title + Autoplay */
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: 90vw;
+  height: inherit;
+}
+
+.slider-title, .credits-title {
+  top: 0px;
+  margin: 10px;
+  color: #f4dbbf;
+}
+
+#autoplay-button {
+  float: right;
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 40px;
+  border: none;
+  color: #2f3135;
+  background-color: #fff8f2;
+  text-align: center;
+  font-size: 1.2em;
+  padding-top: 2px;
+  padding-left: 10px;
+  outline: 0;
+  cursor: pointer;
+  transition: background-color 0.3s linear;
+}
+
+#autoplay-button:hover {
+  background-color: #f4dbbf;
+}
+
+
+/* SLIDER - Image container */
+
+.slider-container {
+  display: flex;
+  position: relative;
+  margin: auto auto 50px auto;
+  overflow-x: hidden;
+  width: 90vw;
+  height: 60vw;
+
+}
+
+.image-container {
+  display: flex; /* Could remove - check at the end */
+  margin-left: 0px; /* Could remove - check at the end */
+}
+
+#current-image {
+  transition: margin-left 0.4s linear 0s;
+}
+
+.slider-container img {
+  width: 90vw;
+}
+
+@media (min-width: 780px) {
+  .slider-container {
+    width: 700px;
+    height: 467px;
+  }
+
+  .slider-container img {
+    width: 700px;
+    height: 100%;
+  }
+
+  .top-row {
+    width: 700px;
+  }
+}
+
+/* SLIDER - Prev/Next buttons */
+
+.slider-buttons {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.5em;
+  color: #fcd9bd;
+  opacity: 0.3;
+  transition: opacity 1s;
+  padding: 30px;
+}
+
+#next {
+  right: 0px;
+  text-align: right;
+}
+
+.slider-buttons:hover {
+  opacity: 0.8;
+}
+
+.slider-buttons:focus {
+  outline:0; /* avoids blue shadow when clicking on button */
+}
+
+
+/* SLIDER - Photo credits */
+/* Text styling under .home-parapgraph */
+
+.photo-credits, .photo-credits-text {
+  margin-bottom: 50px;
+}
+
+.credits-title {
+  cursor: pointer;
+}
+
+.photo-credits-text {
+  display: none;
+}
+
+
+
 /* FOOTER */
 
 footer {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    height: 110px;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    text-align: center; /* center icons */
-    background: linear-gradient(to bottom,
-                rgba(26,29,34, 0),
-                rgba(26,29,34, 1) 50%);
-    user-select: none;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  height: 110px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background: linear-gradient(to bottom,
+              rgba(26,29,34, 0),
+              rgba(26,29,34, 1) 50%);
+  user-select: none;
 }
 
-.footicons {
+.footer-icons {
   position: fixed;
   bottom: 0px;
 }
@@ -192,7 +321,6 @@ footer img {
   height: 25px;
   padding: 15px;
   padding-top: 20px;
-  color: #d39477; /* no effect.... */
   opacity: 0.6;
   transition: opacity 0.8s;
 }
