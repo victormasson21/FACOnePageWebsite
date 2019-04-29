@@ -32,7 +32,9 @@ var next = document.getElementById('next');
 
 /* IMAGE SLIDER - Creates mosaic of images */
 
-for (let i = 2; i <= 5; i++) {
+var imageCount = 4;  /* Image count adjusted to 0-based numbering */
+
+for (let i = 1; i <= imageCount; i++) {
   var newImage = currentImage.cloneNode(false);
   imageContainer.appendChild(newImage);
   var newSrc = 'imgfolder/img' + i + '.jpg';
@@ -45,19 +47,15 @@ var j = 0;
 var newMargin = 0;
 
 function slideRight() {
-  j += 1;
-  if (j == 5) {
-    j = 0
-  }
+  j++;
+  if (j > imageCount) { j = 0; }
   newMargin = -(sliderContainer.offsetWidth * j);
   currentImage.setAttribute('style', 'margin-left:' + newMargin + 'px');
 }
 
 function slideLeft() {
-  j -= 1;
-  if (j < 0) {
-    j = 4
-  }
+  j--;
+  if (j < 0) { j = imageCount }
   newMargin = -(sliderContainer.offsetWidth * j);
   currentImage.setAttribute('style', 'margin-left:' + newMargin + 'px');
 }
@@ -90,7 +88,6 @@ window.addEventListener('resize', function() {
 var autoplayButton = document.getElementById('autoplay-button')
 
 var t = 1;
-
 function autoplay() {
   t++;
   if (t % 2 === 0) {
