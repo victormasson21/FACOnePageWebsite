@@ -1,20 +1,135 @@
-var dropdownLks = document.getElementById('ddlinks')
-var dropdownBtn = document.getElementById('linksBtn')
+/* DROPDOWN MENU – Displays the dropdown menu when clicking 'Links' */
 
-/* Displays the dropdown menu when clicking 'Links' */
+var dropdownContent = document.getElementsByClassName('dropdown-content')[0]
+var dropdownTrigger = document.getElementsByClassName('dropdown-trigger')[0]
+
 function menuDropsDown() {
-  if (dropdownLks.style.display == 'block') {
-    dropdownLks.style.display = 'none';
+  if (dropdownContent.style.display === 'block') {
+    dropdownContent.style.display = 'none';
   } else {
-    dropdownLks.style.display = 'block';
+    dropdownContent.style.display = 'block';
   }
 }
+dropdownTrigger.addEventListener('click', menuDropsDown);
 
-dropdownBtn.addEventListener('click', menuDropsDown);
 
-/* Hides the dropdown menu when clicking anywhere else on the page */
+/* DROPDOWN MENU – Removes dropdown menu when clicking anywhere else */
+
 document.addEventListener('click', function(e) {
-    if (!dropdownBtn.contains(e.target)&&!dropdownLks.contains(e.target)) {
+    if (!dropdownTrigger.contains(e.target)&&!dropdownLks.contains(e.target)) {
       dropdownLks.style.display = 'none';
     }
 });
+
+
+/* IMAGE SLIDER */
+
+var currentImage = document.getElementById('current-image');
+var imageContainer = document.getElementsByClassName('image-container')[0];
+var sliderContainer = document.getElementsByClassName('slider-container')[0];
+var prev = document.getElementById('prev');
+var next = document.getElementById('next');
+
+/* IMAGE SLIDER - Creates mosaic of images */
+
+for (let i = 2; i <= 5; i++) {
+  var newImage = currentImage.cloneNode(false);
+  imageContainer.appendChild(newImage);
+  var newSrc = 'imgfolder/img' + i + '.jpg';
+  newImage.setAttribute('src', newSrc);
+}
+
+/* IMAGE SLIDER - Sliding left and right */
+
+var j = 0;
+var newMargin = 0;
+
+function slideRight() {
+  j += 1;
+  if (j == 5) {
+    j = 0
+  }
+  newMargin = -(sliderContainer.offsetWidth * j);
+  currentImage.setAttribute('style', 'margin-left:' + newMargin + 'px');
+}
+
+function slideLeft() {
+  j -= 1;
+  if (j < 0) {
+    j = 4
+  }
+  newMargin = -(sliderContainer.offsetWidth * j);
+  currentImage.setAttribute('style', 'margin-left:' + newMargin + 'px');
+}
+
+/* IMAGE SLIDER - Sliding using keyboard */
+
+window.addEventListener('keyup', function(e) {
+  if (e.key == 'ArrowRight') {
+    slideRight()
+  }
+  if (e.key == 'ArrowLeft') {
+    slideLeft()
+  }
+})
+
+/* IMAGE SLIDER - Sliding using clickable arrows */
+
+prev.addEventListener('click', slideLeft);
+next.addEventListener('click', slideRight);
+
+/* IMAGE SLIDER - Adjusting image mosaic margin when resizing slider */
+
+window.addEventListener('resize', function() {
+  newMargin = -(sliderContainer.offsetWidth * j);
+  currentImage.setAttribute('style', 'margin-left:' + newMargin + 'px');
+})
+
+/* IMAGE SLIDER - Autoplay */
+
+var autoplayButton = document.getElementById('autoplay-button')
+
+var t = 1;
+
+function autoplay() {
+  t++;
+  if (t % 2 === 0) {
+    ongoing = window.setInterval(slideRight, 1500);
+    autoplayButton.innerHTML = `&#9724;`;
+    var newStyle = 'font-size: 1.3em; padding-left: 5px;';
+    autoplayButton.setAttribute('style', newStyle);
+
+    var hideBtns = 'visibility: hidden'; // not necessary?
+    prev.setAttribute('style', hideBtns); // not necessary?
+    next.setAttribute('style', hideBtns); // not necessary?
+  } else {
+    window.clearInterval(ongoing);
+    autoplayButton.innerHTML = `&#9658;`;
+    var newStyle = 'font-size: 1.2em; padding-left: 10px;';
+    autoplayButton.setAttribute('style', newStyle);
+
+    var hideBtns = 'visibility: visible'; // not necessary?
+    prev.setAttribute('style', hideBtns); // not necessary?
+    next.setAttribute('style', hideBtns); // not necessary?
+  }
+}
+
+autoplayButton.addEventListener('click', autoplay)
+
+
+/* IMAGE SLIDER - Photo credits hide/display */
+
+var creditsTitle = document.getElementsByClassName('credits-title')[0];
+var photoCreditsText = document.getElementsByClassName('photo-credits-text')[0];
+
+function displayCredits() {
+  if (photoCreditsText.style.display === 'block') {
+    photoCreditsText.style.display = 'none';
+  } else {
+    photoCreditsText.style.display = 'block';
+  }
+}
+
+creditsTitle.addEventListener('click', displayCredits);
+
+
