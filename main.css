@@ -96,23 +96,20 @@ body {
 
 /* BODY - Text blocks */
 
-.home-block {
-  padding: 0px 20px;
-}
 
+.home-title, .home-paragraph, .photo-credits-text {
+  padding: 0px 20px;
+  display: block;
 
 .home-title {
-  display: block;
   float: left;
   margin-top: 20px;
   max-width: 640px;
-  height: auto;
 }
 
 .home-paragraph, .photo-credits-text {
   max-width: 450px;
   min-width: 100px;
-  display: block;
   float: right;
 }
 
