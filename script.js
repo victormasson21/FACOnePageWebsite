@@ -34,7 +34,7 @@ var next = document.getElementById('next');
 
 var imageCount = 4;  /* Image count adjusted to 0-based numbering */
 
-for (let i = 0; i <= imageCount; i++) {
+for (let i = 1; i <= imageCount; i++) {
   var newImage = currentImage.cloneNode(false);
   imageContainer.appendChild(newImage);
   var newSrc = 'imgfolder/img' + i + '.jpg';
