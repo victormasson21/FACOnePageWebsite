@@ -16,7 +16,7 @@ dropdownTrigger.addEventListener('click', menuDropsDown);
 /* DROPDOWN MENU – Removes dropdown menu when clicking anywhere else */
 
 document.addEventListener('click', function(e) {
-    if (!dropdownTrigger.contains(e.target)&&!dropdownLks.contains(e.target)) {
+    if (!dropdownTrigger.contains(e.target)&&!dropdownContent.contains(e.target)) {
       dropdownLks.style.display = 'none';
     }
 });
