@@ -17,7 +17,7 @@ dropdownTrigger.addEventListener('click', menuDropsDown);
 
 document.addEventListener('click', function(e) {
     if (!dropdownTrigger.contains(e.target)&&!dropdownContent.contains(e.target)) {
-      dropdownLks.style.display = 'none';
+      dropdownContent.style.display = 'none';
     }
 });
 
