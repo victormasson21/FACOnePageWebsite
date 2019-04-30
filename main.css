@@ -175,7 +175,7 @@ p a:hover {
   height: inherit;
 }
 
-.slider-title, .credits-title {
+.slider-title {
   top: 0px;
   margin: 10px;
   color: #f4dbbf;
@@ -279,13 +279,18 @@ p a:hover {
 /* SLIDER - Photo credits */
 /* Text styling under .home-parapgraph */
 
-.photo-credits, .photo-credits-text {
-  margin-bottom: 50px;
-}
-
 .credits-title {
   cursor: pointer;
+  margin: 10px;
+  padding: 0px 20px;
+  transition: color 0.6s linear;
+  color: #f4dbbf;
 }
+
+.credits-title:hover {
+  color: #fff8f2;
+}
+
 
 .photo-credits-text {
   display: none;
